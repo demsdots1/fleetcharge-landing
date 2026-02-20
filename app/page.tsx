@@ -381,12 +381,12 @@ export default function Home() {
               </div>
 
               <h1 className="mt-7 text-4xl font-bold tracking-tight text-white md:text-5xl">
-                A charging system of record you can defend — at 8:00 AM.
+                A charging system of record you can defend at 8:00 AM.
               </h1>
 
               <p className="mt-6 text-lg leading-7 text-slate-200 md:text-xl">
                 FleetCharge HQ turns CPO sessions, vehicle SOC/freshness, and assignment records into one
-                auditable charging ledger — with explicit pricing rules and no silent fixes. Every tile and
+                auditable charging ledger with explicit pricing rules and no silent fixes. Every tile and
                 chart drills into the exact sessions behind it, so ops can resolve exceptions and finance can
                 trust the totals.
               </p>
@@ -463,7 +463,7 @@ export default function Home() {
         <SectionHeading
           eyebrow="Proof"
           title="What you see at 8:00 AM"
-          desc="A fast operational check—then one click into the ledger evidence."
+          desc="A fast operational check then one click into the ledger evidence."
         />
 
         <div className="mx-auto mt-12 max-w-6xl px-6">
@@ -497,7 +497,6 @@ export default function Home() {
                 <div className="flex items-center gap-3 px-5 py-5">
                   <div className="leading-tight">
                     <p className="text-sm font-semibold">FleetCharge HQ</p>
-                    <p className="text-xs text-slate-300">Mock app</p>
                   </div>
                 </div>
 
@@ -530,16 +529,6 @@ export default function Home() {
                   })}
                 </nav>
 
-                <div className="px-4 pb-5">
-                  <div className="rounded-2xl bg-white/5 p-4 ring-1 ring-white/10">
-                    <p className="text-xs font-semibold uppercase tracking-wide text-slate-300">Trust cues</p>
-                    <ul className="mt-3 space-y-2 text-xs text-slate-200">
-                      <li>• All metrics derived from ledger rows</li>
-                      <li>• No inference</li>
-                      <li>• Fail-closed attribution</li>
-                    </ul>
-                  </div>
-                </div>
               </aside>
 
               {/* Main content */}
@@ -1494,13 +1483,13 @@ export default function Home() {
       <section id="why" className="py-16 md:py-20">
         <SectionHeading
           eyebrow="Why this exists"
-          title="Fleet charging data is fragmented — and it shows."
+          title="Fleet charging data is fragmented."
           desc="Operations teams end up reconciling CPO sessions, telematics feeds, assignments, and pricing logic by hand. FleetCharge HQ replaces that workflow with a defensible system of record."
         />
 
         <div className="mx-auto mt-12 grid max-w-6xl gap-6 px-6 md:grid-cols-3">
           <Card title="Spreadsheets & defensive reconciliation">
-            Manual work just to understand what happened — and to explain it confidently.
+            Manual work just to understand what happened and to explain it confidently.
           </Card>
           <Card title="Uncertain attribution">
             Sessions without clear vehicle/driver alignment become cost disputes and operational noise.
@@ -1529,7 +1518,7 @@ export default function Home() {
               <div>
                 <p className="text-sm font-semibold text-slate-900">3) Weekly review</p>
                 <p className="mt-2 text-sm text-slate-600">
-                  AC/DC mix, cost by vehicle/network, exposure breakdown — not daily, but essential.
+                  AC/DC mix, cost by vehicle/network, exposure breakdown not daily, but essential.
                 </p>
               </div>
             </div>
@@ -1542,7 +1531,7 @@ export default function Home() {
         <SectionHeading
           eyebrow="Pilot readiness"
           title="What we need to onboard a fleet"
-          desc="We start with explicit inputs. If a field isn’t available, we show the gap — we don’t guess."
+          desc="We start with explicit inputs. If a field isn’t available, we show the gap. We don’t guess."
         />
 
         <div className="mx-auto mt-12 grid max-w-6xl gap-6 px-6 md:grid-cols-3">
@@ -1564,7 +1553,7 @@ export default function Home() {
 
         <div className="mx-auto mt-6 max-w-6xl px-6">
           <p className="text-sm text-slate-600">
-            If you can’t provide a mapping signal, that’s normal — unassigned is a valid outcome.
+            If you can’t provide a mapping signal, that’s normal. Unassigned is a valid outcome.
           </p>
         </div>
       </section>
@@ -1574,7 +1563,7 @@ export default function Home() {
         <SectionHeading
           eyebrow="What it does"
           title="A charging ledger you can defend"
-          desc="FleetCharge HQ creates one structured record for every charging event — with explicit cost logic and audit-ready metadata."
+          desc="FleetCharge HQ creates one structured record for every charging event with explicit cost logic and audit-ready metadata."
         />
 
         <div className="mx-auto mt-12 grid max-w-6xl gap-6 px-6 md:grid-cols-2">
@@ -1589,7 +1578,7 @@ export default function Home() {
           </Card>
 
           <Card title="Pricing rules are explicit">
-            Costs are calculated using explicit pricing rules — and the applied rule metadata is attached to the session
+            Costs are calculated using explicit pricing rules and the applied rule metadata is attached to the session
             for traceability.
           </Card>
 
@@ -1626,16 +1615,16 @@ export default function Home() {
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-xs font-semibold uppercase tracking-wider text-orange-300">Trust-first positioning</p>
             <h2 className="mt-3 text-2xl font-bold tracking-tight md:text-3xl">
-              Built for operators — not dashboards and hype.
+              Built for operators.
             </h2>
             <p className="mt-3 text-base text-slate-200">
-              Operators don’t need more charts. They need fewer surprises—and proof behind every number.
+              Operators don’t need more charts. They need fewer surprises and proof behind every number.
             </p>
             <p className="mt-3 text-base text-slate-200">
               FleetCharge HQ focuses on a defensible charging record. No inference. No optimization. No control.
             </p>
             <p className="mt-3 text-base text-slate-200">
-              When data is missing or delayed, we show it — we don’t fill gaps with heuristics.
+              When data is missing or delayed, we show it. We don’t fill gaps with heuristics.
             </p>
           </div>
 
@@ -1661,7 +1650,7 @@ export default function Home() {
                 <CheckItem>No telematics replacement</CheckItem>
               </ul>
               <p className="mt-5 text-sm text-slate-200">
-                No silent fixes. Every number is traceable—even when data is missing or delayed.
+                No silent fixes. Every number is traceable, even when data is missing or delayed.
               </p>
             </div>
           </div>
@@ -1700,7 +1689,7 @@ export default function Home() {
               <span className="float-right text-slate-400 transition group-open:rotate-180">⌄</span>
             </summary>
             <p className="mt-3 text-sm text-slate-600">
-              It means summaries and totals can be traced back to the ledger sessions that created them — with explicit
+              It means summaries and totals can be traced back to the ledger sessions that created them with explicit
               pricing logic and visible gaps when data is missing or delayed.
             </p>
           </details>
@@ -1711,7 +1700,7 @@ export default function Home() {
               <span className="float-right text-slate-400 transition group-open:rotate-180">⌄</span>
             </summary>
             <p className="mt-3 text-sm text-slate-600">
-              FleetCharge HQ doesn’t replace invoices. It replaces manual reconciliation—by showing a defensible,
+              FleetCharge HQ doesn’t replace invoices. It replaces manual reconciliation by showing a defensible,
               session-level record with explicit pricing logic and visible gaps when data is missing or delayed.
             </p>
           </details>
