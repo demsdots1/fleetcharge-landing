@@ -164,13 +164,11 @@ function EarlyAccessForm() {
 
   return (
     <div className="rounded-2xl bg-white p-7 shadow-2xl ring-1 ring-black/5">
-      <div className="flex items-start justify-between gap-4">
-        <div>
-          <h3 className="text-lg font-bold text-slate-900">Request Early Access</h3>
-          <p className="mt-2 text-sm text-slate-600">
-            Currently onboarding fleets with structured charging data needs.
-          </p>
-        </div>
+      <div>
+        <h3 className="text-lg font-bold text-slate-900">Request Early Access</h3>
+        <p className="mt-2 text-sm text-slate-600">
+          Currently onboarding fleets with structured charging data needs.
+        </p>
       </div>
 
       <form onSubmit={handleSubmit} className="mt-6 grid gap-3">
