@@ -297,49 +297,47 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white text-slate-900">
       {/* ───────────────────────────── TOP NAV ───────────────────────────── */}
-      <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-md">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-6">
-          <div className="flex items-center gap-4">
-            <img src="/logo.svg" alt="FleetCharge HQ" className="h-16 w-16" />
-            <div className="leading-tight">
-              <p className="text-lg font-semibold text-slate-900">FleetCharge HQ</p>
-              <p className="text-sm text-slate-500">Fleet Charging System of Record</p>
-            </div>
-          </div>
+      <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur-md">
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
+          {/* Logo */}
+          <a href="#" className="flex items-center gap-3">
+            <img src="/logo.svg" alt="FleetCharge HQ" className="h-9 w-9" />
+            <span className="text-sm font-semibold text-slate-900">FleetCharge HQ</span>
+          </a>
 
-          <nav className="hidden items-center gap-8 md:flex">
-            <a href="#ledger-section" className="text-base font-medium text-slate-600 hover:text-slate-900">
-              Ledger
-            </a>
-            <a href="#walkthrough" className="text-base font-medium text-slate-600 hover:text-slate-900">
-              Product
-            </a>
-            <a href="#how" className="text-base font-medium text-slate-600 hover:text-slate-900">
-              How it Works
-            </a>
-            <a href="#integration" className="text-base font-medium text-slate-600 hover:text-slate-900">
-              Integration
-            </a>
-            <a href="#ecosystem" className="text-base font-medium text-slate-600 hover:text-slate-900">
-              Ecosystem
-            </a>
-            <a href="#faq" className="text-base font-medium text-slate-600 hover:text-slate-900">
-              FAQ
-            </a>
+          {/* Nav links */}
+          <nav className="hidden items-center gap-1 lg:flex">
+            {[
+              { href: '#ledger-section', label: 'Ledger' },
+              { href: '#walkthrough', label: 'Product' },
+              { href: '#how', label: 'How it Works' },
+              { href: '#integration', label: 'Integration' },
+              { href: '#ecosystem', label: 'Ecosystem' },
+              { href: '#faq', label: 'FAQ' },
+            ].map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="rounded-md px-3 py-1.5 text-sm text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900"
+              >
+                {link.label}
+              </a>
+            ))}
           </nav>
 
-          <div className="flex items-center gap-4">
-            <a
-              href="#early-access"
-              className="hidden rounded-lg border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50 md:inline-flex"
-            >
-              Request Early Access
-            </a>
+          {/* CTA */}
+          <div className="flex items-center gap-3">
             <a
               href="#walkthrough"
-              className="inline-flex rounded-lg bg-slate-900 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-800"
+              className="hidden text-sm font-medium text-slate-600 hover:text-slate-900 lg:inline-flex"
             >
-              See Product Walkthrough
+              See Product
+            </a>
+            <a
+              href="#early-access"
+              className="inline-flex items-center justify-center rounded-lg bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-slate-800"
+            >
+              Request Early Access
             </a>
           </div>
         </div>
