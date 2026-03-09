@@ -320,6 +320,9 @@ export default function Home() {
             <a href="#integration" className="text-base font-medium text-slate-600 hover:text-slate-900">
               Integration
             </a>
+            <a href="#ecosystem" className="text-base font-medium text-slate-600 hover:text-slate-900">
+              Ecosystem
+            </a>
             <a href="#faq" className="text-base font-medium text-slate-600 hover:text-slate-900">
               FAQ
             </a>
@@ -1830,6 +1833,235 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ──────────────── 7b. PARTNER ECOSYSTEM ──────────────── */}
+      <section id="ecosystem" className="bg-slate-50 py-16 md:py-20">
+        <SectionHeading
+          eyebrow="Partner ecosystem"
+          title="An integration layer across the EV ecosystem"
+          desc="FleetCharge HQ connects charging networks, vehicle data providers, fleet systems, and energy stakeholders into a single charging ledger. Built for interoperability &mdash; not replacement."
+        />
+
+        {/* Ecosystem diagram */}
+        <div className="mx-auto mt-12 max-w-4xl px-6">
+          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+            <div className="border-b border-slate-200 bg-slate-50 px-6 py-4">
+              <p className="text-sm font-semibold text-slate-900">Integration architecture</p>
+              <p className="mt-1 text-xs text-slate-600">
+                FleetCharge HQ sits between existing systems. Data flows in, a unified ledger flows out.
+              </p>
+            </div>
+
+            <div className="px-6 py-8">
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-[1fr_auto_1.2fr_auto_1fr]">
+                {/* Left sources */}
+                <div className="space-y-3">
+                  <div className="rounded-xl border border-slate-200 bg-slate-50 p-3 text-center">
+                    <p className="text-[10px] font-semibold uppercase tracking-wide text-slate-400">Charging Networks</p>
+                    <p className="mt-1 text-xs font-semibold text-slate-700">CPO Sessions</p>
+                  </div>
+                  <div className="rounded-xl border border-slate-200 bg-slate-50 p-3 text-center">
+                    <p className="text-[10px] font-semibold uppercase tracking-wide text-slate-400">Vehicle Data</p>
+                    <p className="mt-1 text-xs font-semibold text-slate-700">OEM / Telematics</p>
+                  </div>
+                  <div className="rounded-xl border border-slate-200 bg-slate-50 p-3 text-center">
+                    <p className="text-[10px] font-semibold uppercase tracking-wide text-slate-400">Energy</p>
+                    <p className="mt-1 text-xs font-semibold text-slate-700">Settlement Systems</p>
+                  </div>
+                </div>
+
+                {/* Arrow in */}
+                <div className="hidden items-center justify-center md:flex">
+                  <span className="text-lg text-slate-300">&#8594;</span>
+                </div>
+
+                {/* Center: FleetCharge Ledger */}
+                <div className="flex items-center justify-center">
+                  <div className="w-full rounded-2xl border-2 border-slate-900 bg-slate-900 p-5 text-center shadow-lg">
+                    <p className="text-[10px] font-semibold uppercase tracking-wider text-slate-400">FleetCharge HQ</p>
+                    <p className="mt-1 text-base font-bold text-white">Charging Event Ledger</p>
+                    <p className="mt-2 text-xs text-slate-300">
+                      Deterministic &bull; Traceable &bull; Audit-ready
+                    </p>
+                  </div>
+                </div>
+
+                {/* Arrow out */}
+                <div className="hidden items-center justify-center md:flex">
+                  <span className="text-lg text-slate-300">&#8594;</span>
+                </div>
+
+                {/* Right consumers */}
+                <div className="space-y-3">
+                  <div className="rounded-xl border border-slate-200 bg-slate-50 p-3 text-center">
+                    <p className="text-[10px] font-semibold uppercase tracking-wide text-slate-400">Operations</p>
+                    <p className="mt-1 text-xs font-semibold text-slate-700">Fleet Platforms</p>
+                  </div>
+                  <div className="rounded-xl border border-slate-200 bg-slate-50 p-3 text-center">
+                    <p className="text-[10px] font-semibold uppercase tracking-wide text-slate-400">Finance</p>
+                    <p className="mt-1 text-xs font-semibold text-slate-700">Cost Reporting</p>
+                  </div>
+                  <div className="rounded-xl border border-slate-200 bg-slate-50 p-3 text-center">
+                    <p className="text-[10px] font-semibold uppercase tracking-wide text-slate-400">Infrastructure</p>
+                    <p className="mt-1 text-xs font-semibold text-slate-700">Depot Planning</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Ecosystem category cards */}
+        <div className="mx-auto mt-12 max-w-6xl px-6">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {/* Charging Networks */}
+            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+              <p className="text-xs font-semibold uppercase tracking-wider text-orange-600">
+                Charging Networks (CPOs)
+              </p>
+              <p className="mt-2 text-sm text-slate-600">
+                Session ingestion via OCPI and related protocols from public and depot charging
+                networks.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {['ChargePoint', 'Electrify America', 'EVgo', 'FLO', 'Shell Recharge'].map(
+                  (name) => (
+                    <span
+                      key={name}
+                      className="inline-flex items-center rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-700"
+                    >
+                      {name}
+                    </span>
+                  )
+                )}
+              </div>
+            </div>
+
+            {/* Vehicle Data Providers */}
+            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+              <p className="text-xs font-semibold uppercase tracking-wider text-orange-600">
+                Vehicle Data Providers
+              </p>
+              <p className="mt-2 text-sm text-slate-600">
+                Vehicle SOC, telemetry, and identity data from telematics platforms and OEM APIs.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {['Geotab', 'Samsara', 'Verizon Connect', 'Fleet Complete', 'OEM APIs'].map(
+                  (name) => (
+                    <span
+                      key={name}
+                      className="inline-flex items-center rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-700"
+                    >
+                      {name}
+                    </span>
+                  )
+                )}
+              </div>
+            </div>
+
+            {/* Fleet Systems */}
+            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+              <p className="text-xs font-semibold uppercase tracking-wider text-orange-600">
+                Fleet Systems
+              </p>
+              <p className="mt-2 text-sm text-slate-600">
+                Fleet operations, dispatch, and routing platforms that consume charging visibility
+                data.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {[
+                  'Fleet management software',
+                  'Routing systems',
+                  'Operations platforms',
+                ].map((name) => (
+                  <span
+                    key={name}
+                    className="inline-flex items-center rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-700"
+                  >
+                    {name}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Charging Infrastructure */}
+            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+              <p className="text-xs font-semibold uppercase tracking-wider text-orange-600">
+                Charging Infrastructure
+              </p>
+              <p className="mt-2 text-sm text-slate-600">
+                Depot charging hardware vendors and charging management platforms providing session
+                data.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {['Charging hardware vendors', 'Charging management platforms'].map(
+                  (name) => (
+                    <span
+                      key={name}
+                      className="inline-flex items-center rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-700"
+                    >
+                      {name}
+                    </span>
+                  )
+                )}
+              </div>
+            </div>
+
+            {/* Energy & Settlement */}
+            <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm lg:col-span-2">
+              <p className="text-xs font-semibold uppercase tracking-wider text-orange-600">
+                Energy &amp; Settlement Ecosystem
+              </p>
+              <p className="mt-2 text-sm text-slate-600">
+                Energy systems, roaming hubs, and financial settlement visibility across charging
+                networks.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {[
+                  'Utilities',
+                  'Roaming hubs',
+                  'Hubject',
+                  'Gireve',
+                  'Fleet fuel card providers',
+                ].map((name) => (
+                  <span
+                    key={name}
+                    className="inline-flex items-center rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-700"
+                  >
+                    {name}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <p className="mt-6 text-center text-xs text-slate-500">
+            Logos and names shown as representative ecosystem participants. They do not imply formal partnership agreements.
+          </p>
+        </div>
+
+        {/* Integration CTA */}
+        <div className="mx-auto mt-12 max-w-4xl px-6">
+          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm md:p-8">
+            <div className="flex flex-col items-center gap-5 md:flex-row md:justify-between">
+              <div>
+                <p className="text-base font-semibold text-slate-900">
+                  Interested in integrating with FleetCharge?
+                </p>
+                <p className="mt-1 text-sm text-slate-600">
+                  We work with charging networks, telematics providers, and fleet platforms. If your system produces or consumes charging data, let&apos;s talk.
+                </p>
+              </div>
+              <a
+                href="#early-access"
+                className="inline-flex shrink-0 items-center justify-center rounded-lg bg-slate-900 px-6 py-3 text-sm font-semibold text-white hover:bg-slate-800"
+              >
+                Partner With FleetCharge
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ──────────────── 8. WHAT FLEETCHARGE DOES NOT DO ──────────────── */}
       <section id="boundaries" className="bg-slate-900 py-16 md:py-20 text-white">
         <div className="mx-auto max-w-6xl px-6">
@@ -2175,6 +2407,9 @@ export default function Home() {
               </a>
               <a className="hover:text-slate-700" href="#integration">
                 Integration
+              </a>
+              <a className="hover:text-slate-700" href="#ecosystem">
+                Ecosystem
               </a>
               <a className="hover:text-slate-700" href="#faq">
                 FAQ
