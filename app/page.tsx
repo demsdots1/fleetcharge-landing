@@ -171,9 +171,6 @@ function EarlyAccessForm() {
             Currently onboarding fleets with structured charging data needs.
           </p>
         </div>
-        <span className="hidden rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700 ring-1 ring-slate-200 sm:inline-flex">
-          Read-only
-        </span>
       </div>
 
       <form onSubmit={handleSubmit} className="mt-6 grid gap-3">
