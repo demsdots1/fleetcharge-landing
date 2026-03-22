@@ -307,7 +307,7 @@ export default function Home() {
               { href: '#walkthrough', label: 'Product' },
               { href: '#how', label: 'How it Works' },
               { href: '#integration', label: 'Integration' },
-              { href: '#ecosystem', label: 'Ecosystem' },
+              { href: '#ecosystem', label: 'Ecosystem Layer' },
               { href: '#faq', label: 'FAQ' },
             ].map((link) => (
               <a
@@ -372,7 +372,11 @@ export default function Home() {
                 produced it. No silent fixes. No retroactive rewrites.
               </p>
 
-              <p className="mt-4 text-sm text-slate-300">
+              <p className="mt-4 text-sm font-medium text-slate-300">
+                Built for operations, finance, and infrastructure teams that need traceable charging data.
+              </p>
+
+              <p className="mt-3 text-sm text-slate-300">
                 <span className="font-semibold text-white">Trust boundary:</span> If attribution or
                 cost cannot be proven from explicit inputs, the session stays explicitly unassigned.
               </p>
@@ -507,6 +511,50 @@ export default function Home() {
             Every dashboard tile, every aggregate, every chart drills back to the ledger rows that
             produced it. No summary exists without traceable sessions behind it.
           </Card>
+        </div>
+
+        {/* Anatomy of a Charging Event */}
+        <div className="mx-auto mt-12 max-w-6xl px-6">
+          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+            <div className="border-b border-slate-200 bg-slate-50 px-6 py-4">
+              <p className="text-sm font-semibold text-slate-900">Anatomy of a Charging Event</p>
+              <p className="mt-1 text-xs text-slate-600">
+                A single representative ledger row. Every field is explicit, traceable, and derived from source data.
+              </p>
+            </div>
+
+            <div className="overflow-x-auto px-6 py-5">
+              <div className="grid grid-cols-3 gap-3 md:grid-cols-5 lg:grid-cols-9">
+                {[
+                  { label: 'Session ID', value: 'cpo_sess_0001' },
+                  { label: 'Vehicle', value: 'Van 12' },
+                  { label: 'Driver', value: 'Smith' },
+                  { label: 'Energy', value: '24.6 kWh' },
+                  { label: 'Cost', value: '$11.30' },
+                  { label: 'Pricing Rule', value: 'PR-DC-001' },
+                  { label: 'Reconciliation', value: 'Complete' },
+                  { label: 'Attribution', value: 'Attributed' },
+                  { label: 'Source', value: 'OCPI / CPO-A' },
+                ].map((field) => (
+                  <div
+                    key={field.label}
+                    className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2.5"
+                  >
+                    <p className="text-[10px] font-semibold uppercase tracking-wide text-slate-400">
+                      {field.label}
+                    </p>
+                    <p className="mt-1 text-xs font-semibold text-slate-900">{field.value}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="border-t border-slate-200 bg-slate-50 px-6 py-3">
+              <p className="text-xs text-slate-600">
+                Every dashboard tile, every aggregate, every chart traces back to rows like this one. No summary exists without explicit session evidence.
+              </p>
+            </div>
+          </div>
         </div>
 
         <div className="mx-auto mt-8 max-w-6xl px-6">
@@ -1824,79 +1872,104 @@ export default function Home() {
             timestamps, and applied pricing rule IDs. Source provenance is always visible.
           </Card>
         </div>
+
+        <div className="mx-auto mt-8 max-w-6xl px-6">
+          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+            <p className="text-sm text-slate-700">
+              <span className="font-semibold text-slate-900">Production-ready:</span>{' '}
+              Designed for replay, reprocessing, and reconciliation under real-world data conditions.
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* ──────────────── 7b. PARTNER ECOSYSTEM ──────────────── */}
       <section id="ecosystem" className="bg-slate-50 py-16 md:py-20">
         <SectionHeading
-          eyebrow="Partner ecosystem"
-          title="An integration layer across the EV ecosystem"
-          desc="FleetCharge HQ connects charging networks, vehicle data providers, fleet systems, and energy stakeholders into a single charging ledger. Built for interoperability &mdash; not replacement."
+          eyebrow="Ecosystem layer"
+          title="The system layer between charging infrastructure and fleet operations"
+          desc="FleetCharge HQ sits between charging networks, telematics providers, and fleet platforms &mdash; creating a unified charging ledger that none of these systems provide independently. It does not replace these systems. It makes them coherent."
         />
 
-        {/* Ecosystem diagram */}
-        <div className="mx-auto mt-12 max-w-4xl px-6">
+        {/* Ecosystem diagram — middleware layer */}
+        <div className="mx-auto mt-12 max-w-5xl px-6">
           <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
             <div className="border-b border-slate-200 bg-slate-50 px-6 py-4">
-              <p className="text-sm font-semibold text-slate-900">Integration architecture</p>
+              <p className="text-sm font-semibold text-slate-900">FleetCharge HQ as middleware</p>
               <p className="mt-1 text-xs text-slate-600">
-                FleetCharge HQ sits between existing systems. Data flows in, a unified ledger flows out.
+                Existing systems produce fragmented charging data. FleetCharge HQ normalizes it into a single, deterministic ledger.
               </p>
             </div>
 
             <div className="px-6 py-8">
-              <div className="grid grid-cols-1 gap-4 md:grid-cols-[1fr_auto_1.2fr_auto_1fr]">
-                {/* Left sources */}
-                <div className="space-y-3">
-                  <div className="rounded-xl border border-slate-200 bg-slate-50 p-3 text-center">
-                    <p className="text-[10px] font-semibold uppercase tracking-wide text-slate-400">Charging Networks</p>
-                    <p className="mt-1 text-xs font-semibold text-slate-700">CPO Sessions</p>
-                  </div>
-                  <div className="rounded-xl border border-slate-200 bg-slate-50 p-3 text-center">
-                    <p className="text-[10px] font-semibold uppercase tracking-wide text-slate-400">Vehicle Data</p>
-                    <p className="mt-1 text-xs font-semibold text-slate-700">OEM / Telematics</p>
-                  </div>
-                  <div className="rounded-xl border border-slate-200 bg-slate-50 p-3 text-center">
-                    <p className="text-[10px] font-semibold uppercase tracking-wide text-slate-400">Energy</p>
-                    <p className="mt-1 text-xs font-semibold text-slate-700">Settlement Systems</p>
-                  </div>
+              {/* Top: Sources */}
+              <div className="mb-2">
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-slate-400">Sources</p>
+              </div>
+              <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+                <div className="rounded-xl border border-slate-200 bg-slate-50 p-3 text-center">
+                  <p className="text-xs font-semibold text-slate-700">Charging Networks</p>
+                  <p className="mt-1 text-[10px] text-slate-500">CPO sessions &bull; CDRs</p>
                 </div>
-
-                {/* Arrow in */}
-                <div className="hidden items-center justify-center md:flex">
-                  <span className="text-lg text-slate-300">&#8594;</span>
+                <div className="rounded-xl border border-slate-200 bg-slate-50 p-3 text-center">
+                  <p className="text-xs font-semibold text-slate-700">Vehicle Telematics</p>
+                  <p className="mt-1 text-[10px] text-slate-500">SOC &bull; Freshness</p>
                 </div>
-
-                {/* Center: FleetCharge Ledger */}
-                <div className="flex items-center justify-center">
-                  <div className="w-full rounded-2xl border-2 border-slate-900 bg-slate-900 p-5 text-center shadow-lg">
-                    <p className="text-[10px] font-semibold uppercase tracking-wider text-slate-400">FleetCharge HQ</p>
-                    <p className="mt-1 text-base font-bold text-white">Charging Event Ledger</p>
-                    <p className="mt-2 text-xs text-slate-300">
-                      Deterministic &bull; Traceable &bull; Audit-ready
-                    </p>
-                  </div>
+                <div className="rounded-xl border border-slate-200 bg-slate-50 p-3 text-center">
+                  <p className="text-xs font-semibold text-slate-700">Fleet Systems</p>
+                  <p className="mt-1 text-[10px] text-slate-500">Assignments &bull; Identity</p>
                 </div>
-
-                {/* Arrow out */}
-                <div className="hidden items-center justify-center md:flex">
-                  <span className="text-lg text-slate-300">&#8594;</span>
+                <div className="rounded-xl border border-slate-200 bg-slate-50 p-3 text-center">
+                  <p className="text-xs font-semibold text-slate-700">Energy / Settlement</p>
+                  <p className="mt-1 text-[10px] text-slate-500">Invoices &bull; Pricing</p>
                 </div>
+              </div>
 
-                {/* Right consumers */}
-                <div className="space-y-3">
-                  <div className="rounded-xl border border-slate-200 bg-slate-50 p-3 text-center">
-                    <p className="text-[10px] font-semibold uppercase tracking-wide text-slate-400">Operations</p>
-                    <p className="mt-1 text-xs font-semibold text-slate-700">Fleet Platforms</p>
-                  </div>
-                  <div className="rounded-xl border border-slate-200 bg-slate-50 p-3 text-center">
-                    <p className="text-[10px] font-semibold uppercase tracking-wide text-slate-400">Finance</p>
-                    <p className="mt-1 text-xs font-semibold text-slate-700">Cost Reporting</p>
-                  </div>
-                  <div className="rounded-xl border border-slate-200 bg-slate-50 p-3 text-center">
-                    <p className="text-[10px] font-semibold uppercase tracking-wide text-slate-400">Infrastructure</p>
-                    <p className="mt-1 text-xs font-semibold text-slate-700">Depot Planning</p>
-                  </div>
+              {/* Arrow down */}
+              <div className="flex justify-center py-3">
+                <span className="text-lg text-slate-300">&#8595;</span>
+              </div>
+
+              {/* Center: FleetCharge middleware */}
+              <div className="rounded-2xl border-2 border-slate-900 bg-slate-900 p-6 text-center shadow-lg">
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-orange-400">FleetCharge HQ</p>
+                <p className="mt-1 text-lg font-bold text-white">Charging Event Ledger</p>
+                <p className="mt-2 text-xs text-slate-300">
+                  Ingest &bull; Normalize &bull; Reconcile &bull; Explain
+                </p>
+                <div className="mx-auto mt-3 flex flex-wrap items-center justify-center gap-2">
+                  <span className="rounded-md bg-white/10 px-2 py-1 text-[10px] font-medium text-slate-300 ring-1 ring-white/10">Deterministic</span>
+                  <span className="rounded-md bg-white/10 px-2 py-1 text-[10px] font-medium text-slate-300 ring-1 ring-white/10">Read-only</span>
+                  <span className="rounded-md bg-white/10 px-2 py-1 text-[10px] font-medium text-slate-300 ring-1 ring-white/10">Fail-closed</span>
+                  <span className="rounded-md bg-white/10 px-2 py-1 text-[10px] font-medium text-slate-300 ring-1 ring-white/10">Audit-ready</span>
+                </div>
+              </div>
+
+              {/* Arrow down */}
+              <div className="flex justify-center py-3">
+                <span className="text-lg text-slate-300">&#8595;</span>
+              </div>
+
+              {/* Bottom: Outputs */}
+              <div className="mb-2">
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-slate-400">Outputs</p>
+              </div>
+              <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+                <div className="rounded-xl border border-slate-200 bg-slate-50 p-3 text-center">
+                  <p className="text-xs font-semibold text-slate-700">Fleet Operations</p>
+                  <p className="mt-1 text-[10px] text-slate-500">Exceptions &bull; Readiness</p>
+                </div>
+                <div className="rounded-xl border border-slate-200 bg-slate-50 p-3 text-center">
+                  <p className="text-xs font-semibold text-slate-700">Finance</p>
+                  <p className="mt-1 text-[10px] text-slate-500">Cost &bull; Variance &bull; Exports</p>
+                </div>
+                <div className="rounded-xl border border-slate-200 bg-slate-50 p-3 text-center">
+                  <p className="text-xs font-semibold text-slate-700">Infrastructure</p>
+                  <p className="mt-1 text-[10px] text-slate-500">Utilization &bull; Planning</p>
+                </div>
+                <div className="rounded-xl border border-slate-200 bg-slate-50 p-3 text-center">
+                  <p className="text-xs font-semibold text-slate-700">Audit / Compliance</p>
+                  <p className="mt-1 text-[10px] text-slate-500">Lineage &bull; Evidence</p>
                 </div>
               </div>
             </div>
@@ -2104,6 +2177,9 @@ export default function Home() {
                 <CheckItem>
                   Does not invent missing identity or cost data &mdash; gaps are shown as gaps
                 </CheckItem>
+                <CheckItem>
+                  Does not infer or estimate missing data &mdash; every field is explicit or absent
+                </CheckItem>
               </ul>
               <p className="mt-5 text-sm text-slate-300">
                 When data is missing or delayed, the system surfaces the gap. It does not fill it
@@ -2119,21 +2195,21 @@ export default function Home() {
         <SectionHeading
           eyebrow="Architecture"
           title="Built like infrastructure"
-          desc="Ledger-backed architecture designed for traceability, not just display."
+          desc="Three stages. Every output traces to source records through the ledger."
         />
 
         <div className="mx-auto mt-12 max-w-6xl px-6">
-          {/* Architecture diagram block */}
+          {/* Architecture diagram — Sources / Ledger / Outputs */}
           <div className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 shadow-sm">
             <div className="border-b border-slate-200 bg-white px-6 py-4">
-              <p className="text-sm font-semibold text-slate-900">System overview</p>
+              <p className="text-sm font-semibold text-slate-900">System architecture</p>
               <p className="mt-1 text-xs text-slate-600">
-                Data flows left to right. Every output traces back to source records.
+                Sources &#8594; Ledger &#8594; Outputs. The ledger is the single source of truth.
               </p>
             </div>
 
             <div className="px-6 py-8">
-              <div className="grid gap-4 md:grid-cols-4">
+              <div className="grid gap-4 md:grid-cols-[1fr_auto_1.4fr_auto_1fr]">
                 {/* Sources */}
                 <div className="rounded-xl border border-slate-300 bg-white p-4">
                   <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
@@ -2155,74 +2231,69 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Ingestion */}
-                <div className="rounded-xl border border-slate-300 bg-white p-4">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
-                    Ingestion layer
+                {/* Arrow */}
+                <div className="hidden items-center justify-center md:flex">
+                  <span className="text-lg text-slate-300">&#8594;</span>
+                </div>
+
+                {/* LEDGER — visually highlighted */}
+                <div className="rounded-xl border-2 border-slate-900 bg-slate-900 p-5 shadow-lg">
+                  <p className="text-[10px] font-semibold uppercase tracking-wider text-orange-400">
+                    Charging Event Ledger
                   </p>
                   <div className="mt-3 space-y-2">
-                    <div className="rounded-lg bg-slate-100 px-3 py-2 text-xs font-medium text-slate-700">
+                    <div className="rounded-lg bg-white/10 px-3 py-2 text-xs font-medium text-white">
                       Replay-safe ingestion
                     </div>
-                    <div className="rounded-lg bg-slate-100 px-3 py-2 text-xs font-medium text-slate-700">
-                      Session normalization
-                    </div>
-                    <div className="rounded-lg bg-slate-100 px-3 py-2 text-xs font-medium text-slate-700">
+                    <div className="rounded-lg bg-white/10 px-3 py-2 text-xs font-medium text-white">
                       Deterministic cost engine
                     </div>
-                    <div className="rounded-lg bg-slate-100 px-3 py-2 text-xs font-medium text-slate-700">
-                      Attribution resolver
+                    <div className="rounded-lg bg-white/10 px-3 py-2 text-xs font-medium text-white">
+                      Fail-closed attribution
                     </div>
-                  </div>
-                </div>
-
-                {/* Storage */}
-                <div className="rounded-xl border border-slate-300 bg-white p-4">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
-                    Storage
-                  </p>
-                  <div className="mt-3 space-y-2">
-                    <div className="rounded-lg bg-slate-100 px-3 py-2 text-xs font-medium text-slate-700">
-                      PostgreSQL
+                    <div className="rounded-lg bg-white/10 px-3 py-2 text-xs font-medium text-white">
+                      PostgreSQL &bull; Append-only
                     </div>
-                    <div className="rounded-lg bg-slate-100 px-3 py-2 text-xs font-medium text-slate-700">
-                      Charging event ledger
-                    </div>
-                    <div className="rounded-lg bg-slate-100 px-3 py-2 text-xs font-medium text-slate-700">
+                    <div className="rounded-lg bg-white/10 px-3 py-2 text-xs font-medium text-white">
                       Session mutation history
                     </div>
-                    <div className="rounded-lg bg-slate-100 px-3 py-2 text-xs font-medium text-slate-700">
-                      Audit log
-                    </div>
                   </div>
+                  <p className="mt-3 text-[10px] text-slate-400">
+                    Every field is explicit. Every row is traceable.
+                  </p>
                 </div>
 
-                {/* Presentation */}
+                {/* Arrow */}
+                <div className="hidden items-center justify-center md:flex">
+                  <span className="text-lg text-slate-300">&#8594;</span>
+                </div>
+
+                {/* Outputs */}
                 <div className="rounded-xl border border-slate-300 bg-white p-4">
                   <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
-                    Presentation
+                    Outputs
                   </p>
                   <div className="mt-3 space-y-2">
                     <div className="rounded-lg bg-slate-100 px-3 py-2 text-xs font-medium text-slate-700">
-                      React frontend
+                      Evidence-linked UI
                     </div>
                     <div className="rounded-lg bg-slate-100 px-3 py-2 text-xs font-medium text-slate-700">
-                      Evidence-linked drill-through
+                      &quot;Why?&quot; explanations
                     </div>
                     <div className="rounded-lg bg-slate-100 px-3 py-2 text-xs font-medium text-slate-700">
                       Exportable records
                     </div>
                     <div className="rounded-lg bg-slate-100 px-3 py-2 text-xs font-medium text-slate-700">
-                      &quot;Why?&quot; explanations
+                      Drill-through analytics
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Flow arrows */}
+              {/* Flow label */}
               <div className="mt-6 flex items-center justify-center gap-3">
                 <span className="text-xs font-medium text-slate-500">
-                  Sources &#8594; Ingestion &#8594; Ledger &#8594; Evidence-linked UI
+                  Sources &#8594; Ledger &#8594; Outputs &mdash; the ledger is the authority
                 </span>
               </div>
             </div>
@@ -2358,14 +2429,13 @@ export default function Home() {
             <div className="grid items-center gap-8 md:grid-cols-3">
               <div className="md:col-span-2">
                 <h2 className="text-2xl font-bold tracking-tight text-white md:text-3xl">
-                  Replace manual charging reconciliation with a defensible system of record.
+                  Evaluate FleetCharge HQ as your charging system of record.
                 </h2>
                 <p className="mt-3 text-base text-slate-300">
-                  FleetCharge HQ is onboarding EV fleets, charging networks, and integration
-                  partners who need traceable charging data they can defend.
+                  Limited early access for teams with structured charging data environments.
                 </p>
                 <p className="mt-3 text-sm text-slate-400">
-                  Currently accepting early access requests.
+                  Built for operations, finance, and infrastructure teams that need traceable, deterministic charging data they can defend.
                 </p>
               </div>
 
