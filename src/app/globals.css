@@ -2,25 +2,75 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0F1B2D;
+
+  /* Navy / slate palette */
+  --navy: #0F1B2D;
+  --navy-light: #1A2840;
+  --slate-50: #F8FAFC;
+  --slate-100: #F1F5F9;
+  --slate-200: #E2E8F0;
+  --slate-300: #CBD5E1;
+  --slate-400: #94A3B8;
+  --slate-500: #64748B;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1E293B;
+  --slate-900: #0F172A;
+
+  /* Single accent: electric green */
+  --accent: #22C55E;
+  --accent-dark: #16A34A;
+  --accent-light: #4ADE80;
+
+  /* Semantic only */
+  --amber: #F59E0B;
+  --red: #EF4444;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-navy: var(--navy);
+  --color-navy-light: var(--navy-light);
+  --color-accent: var(--accent);
+  --color-accent-dark: var(--accent-dark);
+  --color-accent-light: var(--accent-light);
+  --color-amber: var(--amber);
+  --color-red: var(--red);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-dm-serif);
+  --font-mono: var(--font-plex-mono);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  font-feature-settings: "cv11", "ss01";
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Tabular figures everywhere — this is a finance product */
+.tabular,
+.font-mono,
+[data-tabular],
+table,
+.stat {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Display/serif headlines */
+.font-display {
+  font-family: var(--font-dm-serif), Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+::selection {
+  background-color: var(--accent);
+  color: var(--navy);
 }

@@ -1,0 +1,53 @@
+---
+title: "The Level 3 Data Gap: Why EV Fleet Charging Transactions Are Blind Spots for Finance Teams"
+description: "Fleet card statements for EV charging lack the detailed transaction data that diesel purchases provide. Here's why that matters for fleet finance teams and what you can do about it."
+date: "2026-03-15"
+author: "FleetCharge HQ Team"
+---
+
+When a fleet vehicle fills up at a gas station, the fleet card captures everything: gallons dispensed, price per gallon, vehicle ID, driver ID, odometer reading, and location. This is Level 3 transaction data — the detailed, itemized information that finance teams rely on for cost analysis, budgeting, and audit compliance.
+
+Now consider what happens when that same fleet card is used at a public EV charger.
+
+## What your fleet card actually captures for EV charging
+
+The typical EV charging transaction on a fleet card statement looks something like this:
+
+- Date: 03/18/2026
+- Merchant: CP 800 S VICTORIA AVE
+- Amount: $12.13
+
+That's it. No kWh delivered. No cost per kWh. No vehicle identification. No driver attribution. No session duration. No state of charge.
+
+This isn't a bug — it's a structural limitation of how payment processing works between charging networks and fleet card issuers.
+
+## Why the data gap exists
+
+Fleet cards process EV charging transactions the same way they process any merchant transaction: as a simple purchase. The payment network sees a dollar amount and a merchant name, not a charging session with energy delivery data.
+
+The detailed session data — kWh, cost per kWh, session duration, connector type, state of charge — lives in the charging network's own system (ChargePoint, EVgo, Electrify America, etc.). But that data doesn't flow back through the fleet card payment rail.
+
+## What this means for fleet finance
+
+Without Level 3-equivalent data for EV transactions, fleet finance teams can't:
+
+1. **Calculate cost per mile** for electric vehicles
+2. **Compare fuel costs** between diesel and electric vehicles on an apples-to-apples basis
+3. **Attribute charging costs** to specific vehicles or drivers
+4. **Verify billing accuracy** against actual energy delivered
+5. **Process home charging reimbursements** with documented usage data
+6. **Report to the CFO** with confidence on whether the EV investment is paying off
+
+## The manual workaround (and why it doesn't scale)
+
+Most fleet controllers deal with this by manually cross-referencing fleet card statements with charging network portals. Log into ChargePoint. Export the session history. Match transactions by date and amount. Copy the kWh data into a spreadsheet. Repeat for EVgo. Repeat for Electrify America.
+
+This process typically takes 10-15 hours per month for a fleet with 50-100 EVs. And even then, the match rate is imperfect because timestamps and amounts don't always align perfectly between systems.
+
+## The path forward
+
+The solution isn't waiting for fleet cards to add Level 3 data support for EV charging — that's a payment infrastructure problem that will take years to resolve.
+
+The solution is an enrichment layer that sits between your fleet card data and your accounting system: one that matches payment transactions against charging session data, fills in the missing fields, and gives you the complete picture you need.
+
+That's exactly what FleetCharge HQ does. But that's a topic for another post.

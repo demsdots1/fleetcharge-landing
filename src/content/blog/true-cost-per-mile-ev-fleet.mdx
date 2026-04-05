@@ -1,0 +1,64 @@
+---
+title: "How to Calculate True Cost-Per-Mile for Your EV Fleet (Step-by-Step)"
+description: "A practical guide for fleet controllers on calculating accurate cost-per-mile for electric vehicles, including public charging, home charging, and depot charging."
+date: "2026-03-08"
+author: "FleetCharge HQ Team"
+---
+
+Every fleet controller knows the cost per mile for their diesel vehicles. It's simple math: total fuel cost divided by total miles driven. Your fleet card gives you the fuel cost. Your telematics gives you the miles. Done.
+
+For electric vehicles, the same calculation is straightforward in theory but nearly impossible in practice — unless you have the right data infrastructure in place.
+
+## Why EV cost-per-mile is harder than it looks
+
+The diesel cost-per-mile formula is:
+
+Total fuel cost / Total miles driven = Cost per mile
+
+For EVs, you'd think it's the same:
+
+Total electricity cost / Total miles driven = Cost per mile
+
+But here's the problem: "total electricity cost" is scattered across multiple sources, each with different data quality:
+
+### 1. Public charging (fleet card)
+Your fleet card statement shows a dollar amount, but no kWh. Without kWh, you can't calculate a rate, and you can't verify you're being charged correctly.
+
+### 2. Home charging (utility bill)
+Drivers who charge at home incur costs on their personal utility bill. You need to know: how many kWh went to the fleet vehicle (vs. the household), at what rate, and during which hours (time-of-use rates vary).
+
+### 3. Depot charging (facility meter)
+If you charge at a depot, the electricity cost is buried in your facility's utility bill. You need sub-metering or smart charger data to attribute costs to specific vehicles.
+
+## Step-by-step: Calculating true EV cost-per-mile
+
+### Step 1: Gather your charging data
+Collect charging session data from every source:
+- Fleet card statements (public charging costs)
+- Charging network portals (kWh, session details)
+- Telematics platform (miles driven, energy consumed)
+- Smart charger data (depot/home kWh)
+
+### Step 2: Match and enrich
+For each fleet card transaction, match it to the corresponding charging session to get kWh delivered. This is the hardest step if done manually.
+
+### Step 3: Calculate blended rate
+For each vehicle, calculate the blended electricity rate across all charging types:
+
+Blended rate = (Public cost + Home cost + Depot cost) / Total kWh
+
+### Step 4: Calculate cost per mile
+With total cost and total miles from telematics:
+
+Cost per mile = Total energy cost / Total miles driven
+
+### Step 5: Compare against diesel
+Now you can make a true comparison:
+- Diesel Vehicle D-0015: $0.142/mile
+- EV Vehicle E-0042: $0.038/mile
+
+That's a 73% reduction in fuel cost per mile — but you can only prove it with clean, reconciled data.
+
+## The bottom line
+
+Calculating EV cost-per-mile isn't a math problem. It's a data problem. The formula is simple; getting the inputs is hard. Fleet finance teams need a systematic way to collect, match, and normalize charging data from every source before the calculation becomes meaningful.
