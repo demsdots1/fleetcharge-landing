@@ -10,10 +10,13 @@ export default function EarlyAccessForm() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    // Capture the form element before any await — React nullifies
+    // e.currentTarget after the handler returns.
+    const form = e.currentTarget;
     setStatus("submitting");
     setErrorMessage("");
 
-    const formData = new FormData(e.currentTarget);
+    const formData = new FormData(form);
     const payload = {
       name: formData.get("name") as string,
       email: formData.get("email") as string,
@@ -33,11 +36,14 @@ export default function EarlyAccessForm() {
 
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
-        throw new Error(data.error || "Something went wrong");
+        const msg = data.detail
+          ? `${data.error}: ${data.detail}`
+          : data.error || "Something went wrong";
+        throw new Error(msg);
       }
 
+      form.reset();
       setStatus("success");
-      e.currentTarget.reset();
     } catch (err) {
       setStatus("error");
       setErrorMessage(err instanceof Error ? err.message : "Something went wrong");

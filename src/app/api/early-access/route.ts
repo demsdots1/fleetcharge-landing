@@ -59,7 +59,12 @@ export async function POST(request: Request) {
     if (error) {
       console.error("Supabase insert error:", error);
       return NextResponse.json(
-        { error: "Failed to save submission" },
+        {
+          error: "Failed to save submission",
+          detail: error.message,
+          hint: error.hint,
+          code: error.code,
+        },
         { status: 500 }
       );
     }
@@ -67,8 +72,9 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: true }, { status: 200 });
   } catch (err) {
     console.error("Early access route error:", err);
+    const message = err instanceof Error ? err.message : String(err);
     return NextResponse.json(
-      { error: "Server misconfiguration" },
+      { error: "Server misconfiguration", detail: message },
       { status: 500 }
     );
   }
