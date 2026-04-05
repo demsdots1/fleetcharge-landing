@@ -29,7 +29,7 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               <li>
-                <Link href="#how-it-works" className="text-sm text-gray-300 hover:text-white transition-colors">
+                <Link href="/#how-it-works" className="text-sm text-gray-300 hover:text-white transition-colors">
                   How It Works
                 </Link>
               </li>
