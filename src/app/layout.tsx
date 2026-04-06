@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter, DM_Serif_Display, IBM_Plex_Mono } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { Analytics } from "@vercel/analytics/next";
+import { GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -102,6 +104,8 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        <Analytics />
+        <GoogleTagManager gtmId="G-RPXXRQHQ21" />
       </body>
     </html>
   );
